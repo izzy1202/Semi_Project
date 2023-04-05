@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<!-- 사용자 요청 페이지 상품목록  리스트 -->
+	<entry key="productSelectList">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM,A.*
+			  FROM (SELECT PRODUCT_NO,
+			  			   CATEGORY_NO,
+						   PRODUCT_NAME,
+						   PRODUCT_PRICE,
+						   PRODUCT_DISCOUNT,
+						   PRODUCT_COUNT,
+						   FILE_PATH || SAVE_NAME "TITLEIMG"
+					FROM PRODUCT P 
+		            JOIN CATEGORY USING(CATEGORY_NO)
+                    JOIN PRODUCT_ATTA  USING (PRODUCT_NO)
+		            WHERE P.STATUS ='Y'
+		            AND CATEGORY_NO LIKE ?
+		            ORDER BY PRODUCT_DATE DESC) A)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	<!-- 카테고리 목록 조회 -->
+	<entry key="productSelectCategoryList">
+		SELECT *
+		FROM CATEGORY
+		WHERE CATEGORY_NO LIKE '%000%'
+	</entry>
+	
+	<!-- 카테고리별 상품 총 갯수 조회 -->
+	<entry key="productSelectListCount">
+		SELECT COUNT(*) COUNT
+		FROM PRODUCT
+		WHERE STATUS='Y'
+			AND CATEGORY_NO LIKE ?
+	</entry>
+	
+	<!-- 상품 조회수 증가 메소드 -->
+	<entry key="productIncreaseCount">
+		UPDATE PRODUCT
+        SET PRODUCT_COUNT = PRODUCT_COUNT+1
+        WHERE PRODUCT_NO = ?
+			AND STATUS = 'Y'
+	</entry>
+	
+	<!-- 베스트 TOP5 조회 -->
+	<entry key="productTopList">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM,A.*
+			  FROM (SELECT PRODUCT_NO,
+			  			   PRODUCT_NAME,
+						   PRODUCT_PRICE,
+						   PRODUCT_DISCOUNT,
+						   FILE_PATH || SAVE_NAME "TITLEIMG"
+					FROM PRODUCT
+					LEFT JOIN PRODUCT_ATTA USING (PRODUCT_NO)
+					WHERE PRODUCT.STATUS = 'Y'
+					ORDER BY PRODUCT_COUNT DESC) A)
+		WHERE RNUM BETWEEN 1 AND 5
+	</entry>
+	
+	<!-- 상세페이지 상품 조회 -->
+	<entry key="ProductGet">
+		SELECT *
+		FROM PRODUCT
+		JOIN CATEGORY USING (CATEGORY_NO)
+		JOIN PRODUCT_ATTA USING (PRODUCT_NO)
+		WHERE PRODUCT_NO = ?
+	</entry>
+
+	<!-- 상세 페이지 상품 코맨트 리스트 조회 -->
+	<entry key="productCmList">
+		SELECT * FROM PRODUCT_COMMENT
+		WHERE PD_NO = ?
+		ORDER BY COMMENT_NO DESC
+	</entry>
+
+	<!-- 상세페이지 상품  코맨트 갯수 조회  -->
+	<entry key="productCmListCount">
+		SELECT COUNT(*) COUNT
+		FROM PRODUCT_COMMENT
+		WHERE PD_NO = ?
+    		AND COMMENT_STAUS = 'Y'
+	</entry>
+
+	<!-- 상세페이지 상품 코맨트 등록 -->
+	<entry key="productCmInsert">
+		INSERT INTO PRODUCT_COMMENT(COMMENT_NO,
+									COMMENT_NAME,
+									COMMNET_PWD,
+									COMMENT_CONTENT,
+									PD_NO)
+							VALUES (SEQ_PD_CMNO.NEXTVAL,
+									?,
+									?,
+									?,
+									?)
+	</entry>
+
+	<!-- 상세페이지 상품 코맨트 삭제 -->
+	<entry key="productCmDelete">
+		UPDATE PRODUCT_COMMENT
+		SET COMMENT_STAUS = 'N'
+		WHERE COMMENT_NO = ?
+	</entry>
+	
+</properties>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<entry key="MemberLogin">
+		SELECT *
+		FROM MEMBER
+		WHERE USER_ID = ?
+		AND USER_PWD = ?
+		AND STATUS = 'Y'
+	</entry>
+	<entry key="findId">
+		SELECT USER_ID
+		FROM MEMBER
+		WHERE EMAIL = ?
+	</entry>
+
+	<entry key="findPwd">
+		SELECT USER_PWD
+		FROM MEMBER
+		WHERE USER_ID = ?
+	</entry>
+	
+	<!-- 아이디 중복확인 - 이지은 -->
+	<entry key="userIdCheck">
+		SELECT COUNT(*) COUNT
+		FROM MEMBER
+		WHERE USER_ID = ?
+	</entry>
+
+	<!-- 회원가입 - 이지은 -->
+	<entry key="userInsert">
+		INSERT INTO MEMBER(USER_NO
+		,USER_ID
+		,USER_PWD
+		,USER_NAME
+		,PHONE
+		,EMAIL
+		,ADDRESS)VALUES(SEQ_UNO.NEXTVAL,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?)
+	</entry>
+	<!--  회원정보 수정 멤버 조회  -->
+	<entry key="selectMember"> SELECT * FROM MEMBER WHERE USER_ID = ? </entry>
+	
+	<entry key="updatePwd"> UPDATE MEMBER SET USER_PWD = ? ,MODIFY_DATE = SYSDATE WHERE USER_ID = ? </entry>
+	<entry key="userDelete"> UPDATE MEMBER SET STATUS = 'N' ,MODIFY_DATE = SYSDATE WHERE USER_ID = ? AND USER_PWD = ? </entry>
+	<entry key="infoUpdate"> UPDATE MEMBER SET USER_NAME =? ,PHONE = ? ,EMAIL = ? ,ADDRESS = ? ,MODIFY_DATE=SYSDATE WHERE USER_ID = ? </entry>
+</properties>

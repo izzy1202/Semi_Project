@@ -1,0 +1,62 @@
+package com.e2.user.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.json.simple.JSONObject;
+
+import com.e2.user.model.service.MemberService;
+
+/**
+ * Servlet implementation class MemberPwdFindController
+ */
+@WebServlet("/pwdFind.member")
+public class MemberPwdFindController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public MemberPwdFindController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String userId = request.getParameter("userId");
+		String userPwd = new MemberService().findPwd(userId);
+		
+		response.setContentType("text/html; charset=UTF-8");
+		JSONObject jobj = new JSONObject();
+		
+		if(userPwd != null) {
+			jobj.put("userPwd",userPwd);
+			jobj.put("msg","success");
+			response.setContentType("aplication/json; charset=UTF-8");
+			response.getWriter().print(jobj);
+		}else {
+			System.out.println("실패");
+			response.getWriter().print("fail");
+		}
+		
+		
+	}
+
+}

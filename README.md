@@ -14,11 +14,11 @@
 ![image](https://user-images.githubusercontent.com/106478906/229982540-82985063-2bcb-4237-8a44-50e8cc9a2f92.png)
 
 ## 마이 페이지
-![image](https://user-images.githubusercontent.com/106478906/229831811-b36760b0-f2f4-4586-a1dc-5b400f4af584.png)
+![KakaoTalk_20230405_152211182](https://user-images.githubusercontent.com/106478906/229998429-7ac9d338-7146-424e-93a7-f0ba24c65106.png)
 
 ## 회원가입 페이지
 ![image](https://user-images.githubusercontent.com/106478906/229983594-7fca7fc8-9a79-46cb-9caf-e76aae227e7d.png)
 
-### 다음 주소 API
+### - 다음 주소 API
 ![image](https://user-images.githubusercontent.com/106478906/229986700-8201592e-680b-4eb5-8d82-c71386bd66be.png)
 

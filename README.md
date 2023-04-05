@@ -3,7 +3,8 @@
 
 맡은 역할 : 회원가입, 메인 페이지, 헤더, 푸터, 마이 페이지 메인
 
-![image](https://user-images.githubusercontent.com/106478906/229830224-85df6a45-0e64-4316-b695-39cb113b8599.png)
+![main](https://user-images.githubusercontent.com/106478906/229979949-63fc306e-3213-42cd-819b-547237bdeedc.png)
+
 - 메인 화면, 헤더
 
 ![image](https://user-images.githubusercontent.com/106478906/229831758-aa141b7f-6868-4b19-b5bb-a5773410e46a.png)

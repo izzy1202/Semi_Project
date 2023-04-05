@@ -1,17 +1,24 @@
-# Semi_Project
+# 지은이
 전 연령층이 쉽게 이용 가능한 도서 구매 사이트 - Semi Project
 
-맡은 역할 : 회원가입, 메인 페이지, 헤더, 푸터, 마이 페이지 메인
+맡은 역할 : 헤더, 푸터, 메인 페이지, 회원가입, 마이 페이지 메인
 
-![main](https://user-images.githubusercontent.com/106478906/229979949-63fc306e-3213-42cd-819b-547237bdeedc.png)
+## 헤더
+![image](https://user-images.githubusercontent.com/106478906/229981012-1e87aa85-ea6c-4bc4-a302-258ca7f8d8d4.png)
 
-- 메인 화면, 헤더
+## 롤링 배너, 베스트셀러 TOP5(조회수 순)
+![image](https://user-images.githubusercontent.com/106478906/229981142-cda7b814-a782-46ab-97fb-c8bb2adfc4bd.png)
+- TOP5 순위는 ajax로 실시간 반영되게 구현
 
-![image](https://user-images.githubusercontent.com/106478906/229831758-aa141b7f-6868-4b19-b5bb-a5773410e46a.png)
-- 푸터
+## 푸터
+![image](https://user-images.githubusercontent.com/106478906/229982540-82985063-2bcb-4237-8a44-50e8cc9a2f92.png)
 
+## 마이 페이지
 ![image](https://user-images.githubusercontent.com/106478906/229831811-b36760b0-f2f4-4586-a1dc-5b400f4af584.png)
-- 마이 페이지
 
-![image](https://user-images.githubusercontent.com/106478906/229831884-3f86d84c-81a3-4b9e-a340-53d0e673ce35.png)
-- 회원가입 페이지
+## 회원가입 페이지
+![image](https://user-images.githubusercontent.com/106478906/229983594-7fca7fc8-9a79-46cb-9caf-e76aae227e7d.png)
+
+### 다음 주소 API
+![image](https://user-images.githubusercontent.com/106478906/229986700-8201592e-680b-4eb5-8d82-c71386bd66be.png)
+

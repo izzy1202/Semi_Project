@@ -12,6 +12,7 @@
 
 ## 푸터
 ![image](https://user-images.githubusercontent.com/106478906/229982540-82985063-2bcb-4237-8a44-50e8cc9a2f92.png)
+- 모달창 구현
 
 ## 마이 페이지
 ![KakaoTalk_20230405_152211182](https://user-images.githubusercontent.com/106478906/229998429-7ac9d338-7146-424e-93a7-f0ba24c65106.png)

@@ -3,6 +3,9 @@
 
 맡은 역할 : 헤더, 푸터, 메인 페이지, 회원가입, 마이 페이지 메인
 
+## DB 설계
+![ePower2 (3)](https://user-images.githubusercontent.com/106478906/234750832-e88abe93-f033-4e85-814a-a4b945e704dc.png)
+
 ## 헤더
 ![image](https://user-images.githubusercontent.com/106478906/229981012-1e87aa85-ea6c-4bc4-a302-258ca7f8d8d4.png)
 
